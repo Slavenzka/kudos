@@ -5,7 +5,9 @@ class Home extends Component {
   render () {
     return (
       <Container>
-        Home page
+        <div style={{ height: '300vh' }}>
+          Home page
+        </div>
       </Container>
     )
   }

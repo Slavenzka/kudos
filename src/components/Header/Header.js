@@ -30,6 +30,7 @@ class Header extends Component {
   }
 
   handleClickBurger = () => {
+    console.log('click')
     this.setState(prevState => {
       return {
         ...prevState,

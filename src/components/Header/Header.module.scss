@@ -28,7 +28,7 @@
 .link {
   position: relative;
   display: block;
-  @include regular;
+  @include fontNavigation();
 
   &::before {
     content: "";
@@ -78,6 +78,7 @@
   }
 
   .navOpened {
+    padding: 2rem 0;
     opacity: 1;
     transform: scaleY(1);
   }
@@ -93,7 +94,16 @@
   }
 
   .link {
-    padding: 0.5rem 1rem;
+    padding: 1rem 2rem;
+
+    &:hover {
+      color: $colorLighter;
+      background-color: $colorDarker;
+
+      &::before {
+        display: none;
+      }
+    }
   }
 
   .burger {
@@ -102,6 +112,9 @@
     width: 4rem;
     height: 3rem;
     font-size: 0;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
 
     &::before {
       content: "";

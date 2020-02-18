@@ -24,7 +24,7 @@
   color: $colorDark;
 }
 
-@mixin regular($color: $colorMain) {
+@mixin fontRegular($color: $colorMain) {
   font-family: "Roboto", sans-serif;
   font-size: 1.4rem;
   font-weight: 300;
@@ -33,5 +33,17 @@
 
   @media (max-width: 767px) {
     font-size: 1.2rem;
+  }
+}
+
+@mixin fontNavigation($color: $colorMain) {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.25;
+  color: $color;
+
+  @media (max-width: 767px) {
+    font-size: 1.8rem;
   }
 }
