@@ -1,12 +1,13 @@
-import React from 'react';
-import css from './Container.module.scss';
+import React from 'react'
+import css from './Container.module.scss'
+import classnames from 'classnames'
 
-const Container = ({ children }) => {
+const Container = ({ className, children }) => {
   return (
-    <div className={css.wrapper}>
+    <div className={classnames(css.wrapper, className)}>
       {children}
     </div>
   )
 }
 
-export default Container;
+export default Container
