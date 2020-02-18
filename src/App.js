@@ -3,7 +3,7 @@ import React from 'react';
 // components
 import Header from 'components/Header/Header'
 import Footer from 'components/Footer/Footer'
-import PageMain from 'Pages/PageMain/PageMain'
+import Home from "Pages/Home/Home";
 // packages
 import { Switch, Route } from 'react-router-dom'
 
@@ -12,7 +12,7 @@ function App() {
     <>
       <Header />
       <Switch>
-        <Route path='/' exact component={PageMain} />
+        <Route path='/' exact component={Home} />
       </Switch>
       <Footer />
     </>

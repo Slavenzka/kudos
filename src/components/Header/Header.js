@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
 import css from './Header.module.scss'
-import { Container, Row, Col } from 'react-bootstrap'
+import {withRouter} from "react-router-dom";
 
 class Header extends Component {
   render () {
+    console.log(this.props.history);
     return (
       <header className={css.header}>
-        <Container>
-          <Row>
-            <Col>
-              <h1 className={css.title}>
-                Тестовое задание
-              </h1>
-            </Col>
-          </Row>
-        </Container>
+        <h1 className={css.title}>
+          Тестовое задание
+        </h1>
       </header>
     )
   }
 }
 
-export default Header;
+export default withRouter(Header);

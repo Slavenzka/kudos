@@ -3,3 +3,11 @@
   padding: 0 70px;
   width: 1280px;
 }
+
+@media (max-width: 1279px) {
+  .wrapper {
+    margin: 0;
+    padding: 0 10px;
+    width: 100%;
+  }
+}

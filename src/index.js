@@ -5,7 +5,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'normalize.css'
 import 'styles/common.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { HashRouter } from 'react-router-dom';
@@ -14,7 +13,7 @@ const Page = (
   <HashRouter basename='/'>
     <App />
   </HashRouter>
-)
+);
 
 ReactDOM.render(Page, document.getElementById('root'));
 

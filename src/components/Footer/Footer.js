@@ -1,17 +1,15 @@
 import React from 'react'
 import css from './Footer.module.scss'
-import { Container, Row } from 'react-bootstrap'
+import Container from "components/Grid/Container";
 
 const Footer = () => {
   return (
     <footer className={css.wrapper}>
       <Container>
-        <Row>
-          <p style={{ visibility: 'hidden' }}>Some footer content</p>
-        </Row>
+        <p style={{ visibility: 'hidden' }}>Some footer content</p>
       </Container>
     </footer>
   )
-}
+};
 
 export default Footer
