@@ -7,9 +7,18 @@ import { isMobile } from 'react-device-detect'
 import classNames from 'classnames'
 
 class Header extends Component {
+  constructor(props) {
+    super(props)
+    this.headerRef = React.createRef()
+  }
+
   state = {
     headerData: null,
-    isMenuVisible: false
+    isMenuVisible: false,
+    scrollSize: null,
+    isHeaderFixedVisible: false,
+    isHeaderFixedHidden: false,
+    isHeaderStatic: true
   }
 
   componentDidMount() {
@@ -27,10 +36,22 @@ class Header extends Component {
         console.log('No such database entry!')
       }
     }).catch(error => console.log('Error getting document', error))
+
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        scrollSize: window.scrollY
+      }
+    })
+
+    document.addEventListener('scroll', this.handleHeaderOnScroll)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.handleHeaderOnScroll)
   }
 
   handleClickBurger = () => {
-    console.log('click')
     this.setState(prevState => {
       return {
         ...prevState,
@@ -39,8 +60,32 @@ class Header extends Component {
     })
   }
 
+  handleHeaderOnScroll = () => {
+    const headerHeight = this.headerRef.current.getBoundingClientRect().height
+    if (window.scrollY > this.state.scrollSize) console.log('We scroll down!')
+    if (window.scrollY < this.state.scrollSize) console.log('We scroll up!')
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        isHeaderFixedVisible: window.scrollY > headerHeight * 2,
+        isHeaderFixedHidden: window.scrollY < headerHeight * 2,
+        isHeaderStatic: window.scrollY <= headerHeight,
+        scrollSize: window.scrollY
+      }
+    })
+  }
+
   render () {
-    const { headerData, isMenuVisible } = this.state
+    const {
+      headerData,
+      isMenuVisible,
+      isHeaderFixedVisible,
+      isHeaderFixedHidden,
+      isHeaderStatic,
+      scrollSize
+    } = this.state
+
+    console.log(scrollSize)
 
     const navigation = headerData && headerData.items.map((item, index) => {
       return (
@@ -53,7 +98,14 @@ class Header extends Component {
     })
 
     return (
-      <header className={css.header}>
+      <header
+        className={classNames(css.header, {
+          [css.headerFixed]: !isHeaderStatic,
+          [css.headerFixedHidden]: !isHeaderStatic && isHeaderFixedHidden,
+          [css.headerFixedVisible]: !isHeaderStatic && isHeaderFixedVisible
+        })}
+        ref={this.headerRef}
+      >
         <Container className={css.wrapper}>
           <Link to='/header.json'>
             <img src='https://via.placeholder.com/120x50.jpg' alt='Логотип компании'/>

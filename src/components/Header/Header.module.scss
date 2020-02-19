@@ -6,6 +6,25 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
+.headerFixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(-100%);
+  transition-duration: 0s;
+}
+
+.headerFixedHidden {
+  transform: translateY(-100%);
+  transition-duration: 0.3s;
+}
+
+.headerFixedVisible {
+  transform: translateY(0);
+  transition-duration: 0.3s;
+}
+
 .wrapper {
   display: flex;
   justify-content: space-between;
@@ -59,7 +78,7 @@
 }
 
 @media (max-width: 767px) {
-  .header {
+  .header:not(.headerFixedVisible):not(.headerFixedHidden) {
     position: relative;
   }
 
