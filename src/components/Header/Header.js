@@ -62,17 +62,30 @@ class Header extends Component {
 
   handleHeaderOnScroll = () => {
     const headerHeight = this.headerRef.current.getBoundingClientRect().height
-    if (window.scrollY > this.state.scrollSize) console.log('We scroll down!')
-    if (window.scrollY < this.state.scrollSize) console.log('We scroll up!')
-    this.setState(prevState => {
-      return {
-        ...prevState,
-        isHeaderFixedVisible: window.scrollY > headerHeight * 2,
-        isHeaderFixedHidden: window.scrollY < headerHeight * 2,
-        isHeaderStatic: window.scrollY <= headerHeight,
-        scrollSize: window.scrollY
-      }
-    })
+    if (window.scrollY > this.state.scrollSize) {
+      console.log('We scroll down!')
+      this.setState(prevState => {
+        return {
+          ...prevState,
+          isHeaderFixedVisible: window.scrollY > window.innerHeight / 2 * 2,
+          isHeaderFixedHidden: false,
+          isHeaderStatic: window.scrollY <= window.innerHeight / 2,
+          scrollSize: window.scrollY
+        }
+      })
+    }
+    if (window.scrollY < this.state.scrollSize) {
+      console.log('We scroll up!')
+      this.setState(prevState => {
+        return {
+          ...prevState,
+          isHeaderFixedVisible: window.scrollY > window.innerHeight / 2 * 2,
+          isHeaderFixedHidden: window.scrollY < window.innerHeight / 2 * 2,
+          isHeaderStatic: window.scrollY <= window.innerHeight / 2,
+          scrollSize: window.scrollY
+        }
+      })
+    }
   }
 
   render () {
