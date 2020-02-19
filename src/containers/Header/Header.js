@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import css from './Header.module.scss'
+import css from 'containers/Header/Header.module.scss'
 import {Link, withRouter} from "react-router-dom"
 import Container from "components/Grid/Container"
-import firebase from 'Firestore'
 import { isMobile } from 'react-device-detect'
 import classNames from 'classnames'
+import axios from 'axios-instance'
 
 class Header extends Component {
   constructor(props) {
@@ -22,20 +22,16 @@ class Header extends Component {
   }
 
   componentDidMount() {
-    const db = firebase.firestore()
-    const header = db.collection('header').doc('ZJNvVIAHyZuv9Lz2PtFA')
-    header.get().then(doc => {
-      if (doc.exists) {
+    axios.get('/header.json')
+      .then(response => {
         this.setState(prevState => {
           return {
             ...prevState,
-            headerData: doc.data()
+            headerData: response.data
           }
         })
-      } else {
-        console.log('No such database entry!')
-      }
-    }).catch(error => console.log('Error getting document', error))
+      })
+      .catch(error => console.log('Error getting document', error))
 
     this.setState(prevState => {
       return {
@@ -61,7 +57,7 @@ class Header extends Component {
   }
 
   handleHeaderOnScroll = () => {
-    const headerHeight = this.headerRef.current.getBoundingClientRect().height
+    // const headerHeight = this.headerRef.current.getBoundingClientRect().height
     if (window.scrollY > this.state.scrollSize) {
       console.log('We scroll down!')
       this.setState(prevState => {
@@ -94,13 +90,10 @@ class Header extends Component {
       isMenuVisible,
       isHeaderFixedVisible,
       isHeaderFixedHidden,
-      isHeaderStatic,
-      scrollSize
+      isHeaderStatic
     } = this.state
 
-    console.log(scrollSize)
-
-    const navigation = headerData && headerData.items.map((item, index) => {
+    const navigation = headerData && headerData.map((item, index) => {
       return (
         <li className={css.item} key={index}>
           <Link to={item.url} className={css.link}>
