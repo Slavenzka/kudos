@@ -1,10 +1,14 @@
 @import 'fonts';
 @import 'variables';
 
+html {
+  font-size: 10px;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 *,
@@ -25,8 +29,12 @@ body {
   font-size: 0;
 }
 
-@media (min-width: 1200px) {
-  div.container {
-    max-width: 1170px;
+a {
+  text-decoration: none;
+}
+
+@media (max-width: 1279px) {
+  html {
+    font-size: 8px;
   }
 }

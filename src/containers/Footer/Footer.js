@@ -1,5 +1,5 @@
 import React from 'react'
-import css from './Footer.module.scss'
+import css from 'containers/Footer/Footer.module.scss'
 import Container from "components/Grid/Container";
 
 const Footer = () => {
