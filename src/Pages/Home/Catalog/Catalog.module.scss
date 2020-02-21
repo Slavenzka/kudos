@@ -1,0 +1,78 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.section {
+  padding: 4rem 0;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 25rem;
+  grid-auto-flow: dense;
+  justify-content: space-between;
+  grid-gap: 2rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.itemHigh {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+}
+
+.itemSquare {
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+}
+
+.itemLong {
+  grid-column: span 2;
+}
+
+.itemRow {
+  grid-column: 1 / -1;
+}
+
+.link {
+  display: block;
+  padding: 1rem;
+  height: 100%;
+  background-color: white;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+
+.card {
+  position: relative;
+  margin-top: auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.title {
+  margin: 0;
+  @include h3;
+}
+
+.descriptor {
+  margin: 0;
+  @include fontRegular;
+}

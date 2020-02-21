@@ -8,50 +8,50 @@ class Home extends Component {
       catalog: [
         {
           type: 'regular',
-          url: '',
-          img: '',
+          url: '#test',
+          img: 'assets/images/catalog__item--vacuum.jpg',
           heading: 'Выключатели',
           descriptor: 'Короткое описание предлагаемой продуктовой линейки и заводов-изготовтителей'
         },
         {
           type: 'high',
-          url: '',
-          img: '',
+          url: '/',
+          img: 'assets/images/catalog__item--transformer.jpg',
           heading: 'Силовые и распределительные трансформаторы',
           descriptor: 'Короткое описание предлагаемой продуктовой линейки и заводов-изготовтителей'
         },
         {
           type: 'square',
-          url: '',
-          img: '',
+          url: '/',
+          img: 'assets/images/catalog__item--modular.jpg',
           heading: 'Комплектные трансформаторные подстанции',
           descriptor: 'Короткое описание предлагаемой продуктовой линейки и заводов-изготовтителей'
         },
         {
           type: 'regular',
-          url: '',
-          img: '',
+          url: '/',
+          img: 'assets/images/catalog__item--building.jpg',
           heading: 'Блочно-модульные здания',
           descriptor: 'Короткое описание предлагаемой продуктовой линейки и заводов-изготовтителей'
         },
         {
           type: 'long',
-          url: '',
-          img: '',
+          url: '/',
+          img: 'assets/images/catalog__item--low.jpg',
           heading: 'Коммутационное оборудовапние низкого напряжения (КРУ, НКУ, ЩПТ)',
           descriptor: 'Короткое описание предлагаемой продуктовой линейки и заводов-изготовтителей'
         },
         {
-          type: 'long',
-          url: '',
-          img: '',
+          type: 'row',
+          url: '/',
+          img: 'assets/images/catalog__item--medium.jpg',
           heading: 'Коммутационное оборудование среднего напряжения',
           descriptor: 'Короткое описание предлагаемой продуктовой линейки и заводов-изготовтителей'
         },
         {
           type: 'regular',
-          url: '',
-          img: '',
+          url: '/',
+          img: 'assets/images/catalog__item--automation.jpg',
           heading: 'Системы автоматизации',
           descriptor: 'Короткое описание предлагаемой продуктовой линейки и заводов-изготовтителей'
         },
