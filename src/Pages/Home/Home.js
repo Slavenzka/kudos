@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Catalog from 'Pages/Home/Catalog/Catalog'
+import Catalog from 'components/Catalog/Catalog'
+import About from 'components/About/About'
+import Manufacturers from 'components/Manufacturers/Manufacturers'
 
 class Home extends Component {
   constructor() {
@@ -56,8 +58,52 @@ class Home extends Component {
           descriptor: 'Короткое описание предлагаемой продуктовой линейки и заводов-изготовтителей'
         },
       ],
-      about: {},
-      manufacturers: {},
+      about: {
+        title: 'Несколько слов о нас',
+        descriptor: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below ' +
+          'for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum"' +
+          'by Cicero are also reproduced in their exact original form, accompanied by English versions' +
+          'from the 1914 translation by H. Rackham.',
+        manager: {
+          photo: 'assets/images/about__manager.jpg',
+          name: 'Иванов Иван Иванович',
+          rank: 'Менеджер по продажам',
+          descriptor: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor' +
+            'incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation' +
+            'ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        }
+      },
+      manufacturers: {
+        title: 'Наши поставщики',
+        list: [
+          {
+            img: 'assets/images/no-photo.svg',
+            name: 'Название предприятия'
+          },
+          {
+            img: 'assets/images/no-photo.svg',
+            name: 'Название предприятия',
+            modal: {
+              img: 'assets/images/no-photo.svg'
+            }
+          },
+          {
+            img: 'assets/images/no-photo.svg',
+            name: 'Название предприятия'
+          },
+          {
+            img: 'assets/images/no-photo.svg',
+            name: 'Название предприятия',
+            modal: {
+              descriptor: 'А можно и привести и просто текстовую информацию'
+            }
+          },
+          {
+            img: 'assets/images/no-photo.svg',
+            name: 'Название предприятия'
+          },
+        ]
+      },
       contacts: {}
     }
   }
@@ -70,8 +116,10 @@ class Home extends Component {
   render () {
     return (
       <main>
-        <h1 className="visuallyHidden">Информация и предлагаемый ассортимент компании ООО "Престиж"</h1>
+        <h1 className='visuallyHidden'>Информация и предлагаемый ассортимент компании ООО "Престиж"</h1>
         <Catalog data={this.data.catalog} />
+        <About data={this.data.about} />
+        <Manufacturers {...this.data.manufacturers} />
       </main>
     )
   }

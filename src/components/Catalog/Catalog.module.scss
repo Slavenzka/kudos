@@ -1,9 +1,5 @@
-@import "styles/variables";
-@import "styles/mixins";
-
-.section {
-  padding: 4rem 0;
-}
+@import "../../styles/variables";
+@import "../../styles/mixins";
 
 .list {
   display: grid;
@@ -12,7 +8,6 @@
   grid-auto-flow: dense;
   justify-content: space-between;
   grid-gap: 2rem;
-  width: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
