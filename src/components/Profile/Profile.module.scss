@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.img {
+  width: 45%;
+  height: 30rem;
+  object-fit: cover;
+}
+
+.content {
+  width: 50%;
+}

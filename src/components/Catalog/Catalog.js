@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from 'components/Grid/Container'
-import css from './Catalog.module.scss'
+import css from 'components/Catalog/Catalog.module.scss'
 import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 
