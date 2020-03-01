@@ -77,29 +77,30 @@ class Home extends Component {
         title: 'Наши поставщики',
         list: [
           {
-            img: 'assets/images/no-photo.svg',
+            img: 'assets/images/logo-enelt.png',
             name: 'Название предприятия'
           },
           {
-            img: 'assets/images/no-photo.svg',
+            img: 'assets/images/logo-uemz.png',
             name: 'Название предприятия',
             modal: {
-              img: 'assets/images/no-photo.svg'
+              img: 'assets/images/no-photo.svg',
+              alt: 'Some alt text'
             }
           },
           {
-            img: 'assets/images/no-photo.svg',
+            img: 'assets/icons/logo-cheaz.svg',
             name: 'Название предприятия'
           },
           {
-            img: 'assets/images/no-photo.svg',
+            img: 'assets/images/logo-enelt.png',
             name: 'Название предприятия',
             modal: {
               descriptor: 'А можно и привести и просто текстовую информацию'
             }
           },
           {
-            img: 'assets/images/no-photo.svg',
+            img: 'assets/images/logo-uemz.png',
             name: 'Название предприятия'
           },
         ]

@@ -1,8 +1,53 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
-.list {
+.wrapper {
+  position: relative;
+
+  :global {
+    .swiper-wrapper {
+      align-items: center;
+    }
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.controls {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  z-index: 1;
+}
+
+.button {
+  position: absolute;
+  left: -5rem;
   margin: 0;
   padding: 0;
-  list-style: none;
+  font-size: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.buttonNext {
+  right: -5rem;
+  margin-left: auto;
+  transform: rotate(180deg);
+}
+
+.buttonDisabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.logo {
+  width: 100%;
+}
+
+.icon {
+  fill: black;
 }
