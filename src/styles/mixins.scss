@@ -1,7 +1,7 @@
 @import "variables";
 
 @mixin h1 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;
@@ -9,7 +9,7 @@
 }
 
 @mixin h2 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 32px;
   font-weight: 600;
   line-height: 39px;
@@ -38,7 +38,7 @@
 
 @mixin fontNavigation($color: $colorMain) {
   font-family: "Roboto", sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 300;
   line-height: 1.25;
   color: $color;

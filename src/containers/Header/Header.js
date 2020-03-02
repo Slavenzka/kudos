@@ -30,6 +30,7 @@ class Header extends Component {
             headerData: response.data
           }
         })
+        this.props.getSize(this.headerRef.current.getBoundingClientRect())
       })
       .catch(error => console.log('Error getting document', error))
 
@@ -95,7 +96,7 @@ class Header extends Component {
           [css.headerFixedHidden]: !isHeaderStatic && isHeaderFixedHidden,
           [css.headerFixedVisible]: !isHeaderStatic && isHeaderFixedVisible
         })}
-        ref={this.props.headerRef}
+        ref={this.headerRef}
       >
         <Container className={css.wrapper}>
           <Link to='/header.json'>
