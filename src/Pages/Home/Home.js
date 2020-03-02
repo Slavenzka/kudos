@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Catalog from 'components/Catalog/Catalog'
 import About from 'components/About/About'
 import Manufacturers from 'components/Manufacturers/Manufacturers'
+import Map from 'components/Map/Map'
 
 class Home extends Component {
   constructor() {
@@ -105,7 +106,16 @@ class Home extends Component {
           },
         ]
       },
-      contacts: {}
+      contacts: {
+        mapCenter: {
+          lat: 55.758035,
+          lng: 37.619019
+        },
+        mapMarker: {
+          lat: 55.758035,
+          lng: 37.619019
+        }
+      }
     }
   }
   state = {}
@@ -121,6 +131,14 @@ class Home extends Component {
         <Catalog data={this.data.catalog} />
         <About data={this.data.about} />
         <Manufacturers {...this.data.manufacturers} />
+        <Map
+          data={this.data.contacts}
+          isMarkerShown
+          googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3sboheowgOrwdg6ocSAhTMIDwWfeXm1c&v=3.exp&libraries=geometry,drawing,places"
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `400px` }} />}
+          mapElement={<div style={{ height: `100%` }} />}
+        />
       </main>
     )
   }
