@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import css from 'containers/Header/Header.module.scss'
-import {Link, withRouter} from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
 import Container from "components/Grid/Container"
 import { isMobile } from 'react-device-detect'
 import classNames from 'classnames'
@@ -95,7 +95,7 @@ class Header extends Component {
           [css.headerFixedHidden]: !isHeaderStatic && isHeaderFixedHidden,
           [css.headerFixedVisible]: !isHeaderStatic && isHeaderFixedVisible
         })}
-        ref={this.headerRef}
+        ref={this.props.headerRef}
       >
         <Container className={css.wrapper}>
           <Link to='/header.json'>
