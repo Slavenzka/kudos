@@ -51,6 +51,20 @@ class Manufacturers extends Component {
     }
   }
 
+  handleEscPress = evt => {
+    if (evt.keyCode === 27) {
+      this.setState(prevState => {
+        return {
+          ...prevState,
+          modal: {
+            isVisible: false,
+            content: null
+          }
+        }
+      })
+    }
+  }
+
   handleLogoClick = index => {
     this.setState(prevState => {
       return {
@@ -61,6 +75,8 @@ class Manufacturers extends Component {
         }
       }
     })
+
+    document.addEventListener('keydown', this.handleEscPress)
   }
 
   handleClickModalClose = () => {
@@ -73,6 +89,7 @@ class Manufacturers extends Component {
         }
       }
     })
+    document.removeEventListener('keydown', this.handleEscPress)
   }
 
   render () {
