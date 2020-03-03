@@ -99,8 +99,8 @@ class Header extends Component {
         ref={this.headerRef}
       >
         <Container className={css.wrapper}>
-          <Link to='/header.json'>
-            <img src='https://via.placeholder.com/120x50.jpg' alt='Логотип компании'/>
+          <Link to='/' style={{ fontSize: 0 }}>
+            <img className={css.logo} src='https://via.placeholder.com/120x50.jpg' alt='Логотип компании'/>
           </Link>
           <button className={css.burger} type='button' onClick={this.handleClickBurger}>
             Управление адаптивным меню
