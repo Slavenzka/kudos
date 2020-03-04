@@ -27,7 +27,15 @@ class App extends Component {
   render () {
     console.log(this.state.headerHeight)
     return (
-      <div style={{ paddingTop: `${this.state.headerHeight || 0}px` }}>
+      <div
+        style={{
+          paddingTop: `${this.state.headerHeight || 0}px`,
+          backgroundImage: 'url("assets/images/lines.png")',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center bottom'
+        }}
+      >
         <Header getSize={this.getSize} />
         <Switch>
           <Route path='/' exact component={Home}/>
