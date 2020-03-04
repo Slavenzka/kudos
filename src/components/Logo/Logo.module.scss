@@ -2,6 +2,7 @@
 
 .wrapper {
   position: relative;
+  display: block;
   @include fontLogo;
 
   &::before {
@@ -12,7 +13,7 @@
     width: 60%;
     height: 10.5rem;
     background-color: red;
-    z-index: -1;
+    z-index: 0;
   }
 
   &::after {
@@ -26,6 +27,10 @@
     box-shadow:
       0 -1rem 0 0 $colorMain,
       0 -2.5rem 0 0 $colorMain;
+  }
+
+  & > * {
+    position: relative;
   }
 }
 
