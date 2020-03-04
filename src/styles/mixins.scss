@@ -1,7 +1,7 @@
 @import "variables";
 
 @mixin h1 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;
@@ -9,22 +9,22 @@
 }
 
 @mixin h2 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 32px;
   font-weight: 600;
   line-height: 39px;
   color: $colorDark;
 }
 
-@mixin h3 {
-  font-family: "Rodchenko", sans-serif;
+@mixin h3($color: $colorLightest) {
+  font-family: "Roboto", sans-serif;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 29px;
-  color: $colorDark;
+  color: $color;
 }
 
-@mixin fontRegular($color: $colorMain) {
+@mixin fontRegular($color: $colorLightest) {
   font-family: "Roboto", sans-serif;
   font-size: 1.4rem;
   font-weight: 300;
@@ -36,14 +36,33 @@
   }
 }
 
-@mixin fontNavigation($color: $colorMain) {
+@mixin fontNavigation($color: $colorDarker) {
   font-family: "Roboto", sans-serif;
-  font-size: 1.4rem;
-  font-weight: 300;
+  font-size: 2.4rem;
+  font-weight: 400;
   line-height: 1.25;
   color: $color;
 
   @media (max-width: 767px) {
     font-size: 1.8rem;
   }
+}
+
+@mixin catalogLabel($color: $colorLightest) {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+  color: $color;
+  letter-spacing: 1px;
+}
+
+@mixin fontLogo($color: $colorLightest) {
+  font-family: "Gilroy", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: $color;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }

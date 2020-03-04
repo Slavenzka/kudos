@@ -24,9 +24,6 @@ const Catalog = ({ data }) => {
               <h3 className={css.title}>
                 {item.heading}
               </h3>
-              <p className={css.descriptor}>
-                {item.descriptor}
-              </p>
             </div>
           </div>
         </Link>
@@ -35,7 +32,7 @@ const Catalog = ({ data }) => {
   })
 
   return (
-    <section className={css.section}>
+    <section>
       <Container>
         <h2 className="visuallyHidden">Рубрики каталога предлагаемой продукции</h2>
         <ul className={css.list}>

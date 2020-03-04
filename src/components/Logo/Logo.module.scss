@@ -1,0 +1,39 @@
+@import "styles/mixins";
+
+.wrapper {
+  position: relative;
+  @include fontLogo;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -170%;
+    left: calc(50% - 8.8rem / 2);
+    width: 8.5rem;
+    height: 12rem;
+    background-color: red;
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -135%;
+    width: 100%;
+    height: 0.3rem;
+    background-color: $colorMain;
+    box-shadow:
+      0 -1.2rem 0 0 $colorMain,
+      0 -3.0rem 0 0 $colorMain;
+  }
+}
+
+.icon {
+  position: absolute;
+  top: -120%;
+  left: calc(50% - 3rem / 2);
+  width: 3rem;
+  height: 3rem;
+  fill: $colorLightest;
+}

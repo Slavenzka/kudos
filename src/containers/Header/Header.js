@@ -5,6 +5,7 @@ import Container from "components/Grid/Container"
 import { isMobile } from 'react-device-detect'
 import classNames from 'classnames'
 import axios from 'axios-instance'
+import Logo from 'components/Logo/Logo'
 
 class Header extends Component {
   constructor(props) {
@@ -30,6 +31,7 @@ class Header extends Component {
             headerData: response.data
           }
         })
+        this.props.getSize(this.headerRef.current.getBoundingClientRect())
       })
       .catch(error => console.log('Error getting document', error))
 
@@ -95,11 +97,12 @@ class Header extends Component {
           [css.headerFixedHidden]: !isHeaderStatic && isHeaderFixedHidden,
           [css.headerFixedVisible]: !isHeaderStatic && isHeaderFixedVisible
         })}
-        ref={this.props.headerRef}
+        ref={this.headerRef}
       >
         <Container className={css.wrapper}>
-          <Link to='/header.json'>
-            <img src='https://via.placeholder.com/120x50.jpg' alt='Логотип компании'/>
+          <Link to='/' style={{ fontSize: 0 }}>
+            <Logo />
+            {/*<img className={css.logo} src='https://via.placeholder.com/120x50.jpg' alt='Логотип компании'/>*/}
           </Link>
           <button className={css.burger} type='button' onClick={this.handleClickBurger}>
             Управление адаптивным меню

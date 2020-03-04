@@ -18,16 +18,17 @@ class App extends Component {
     this.headerRef = React.createRef()
   }
 
-  componentDidMount () {
+  getSize = el => {
     this.setState({
-      headerHeight: this.headerRef.current.getBoundingClientRect().height
+      headerHeight: el.height
     })
   }
 
   render () {
+    console.log(this.state.headerHeight)
     return (
       <div style={{ paddingTop: `${this.state.headerHeight || 0}px` }}>
-        <Header headerRef={this.headerRef} />
+        <Header getSize={this.getSize} />
         <Switch>
           <Route path='/' exact component={Home}/>
         </Switch>
