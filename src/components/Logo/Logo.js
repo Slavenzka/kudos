@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import css from './Logo.module.scss'
+import { Link } from 'react-router-dom'
 
 class Logo extends Component {
   icon = () => (
@@ -10,10 +11,12 @@ class Logo extends Component {
 
   render () {
     return (
-      <div className={css.wrapper}>
+      <Link to='/' className={css.wrapper}>
         {this.icon()}
-        Ятсан Групп
-      </div>
+        <span>
+          Ятсан Групп
+        </span>
+      </Link>
     )
   }
 }

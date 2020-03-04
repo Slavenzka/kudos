@@ -71,9 +71,7 @@ class Header extends Component {
     return (
       <header className={css.header}>
         <Container className={css.wrapper}>
-          <Link to='/' style={{ fontSize: 0 }}>
-            <Logo />
-          </Link>
+          <Logo />
           <button className={css.burger} type='button' onClick={this.handleClickBurger}>
             Управление адаптивным меню
           </button>
