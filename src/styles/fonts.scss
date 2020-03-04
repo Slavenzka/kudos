@@ -57,3 +57,23 @@
     url("../assets/fonts/beltheder-palmyra.woff2") format("woff2"),
     url("../assets/fonts/beltheder-palmyra.woff") format("woff");
 }
+
+@font-face {
+  font-family: "Peace";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src:
+    url("../assets/fonts/Peace Sans Webfont.woff2") format("woff2"),
+    url("../assets/fonts/Peace-Sans-Webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gilroy";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src:
+    url("../assets/fonts/Gilroy-Bold.woff2") format("woff2"),
+    url("../assets/fonts/Gilroy-Bold.woff") format("woff");
+}

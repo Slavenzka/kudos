@@ -17,9 +17,9 @@
 }
 
 @mixin h3($color: $colorLightest) {
-  font-family: "Rodchenko", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 29px;
   color: $color;
 }
@@ -55,4 +55,14 @@
   line-height: 14px;
   color: $color;
   letter-spacing: 1px;
+}
+
+@mixin fontLogo($color: $colorLightest) {
+  font-family: "Gilroy", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: $color;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }

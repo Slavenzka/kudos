@@ -5,6 +5,7 @@ import Container from "components/Grid/Container"
 import { isMobile } from 'react-device-detect'
 import classNames from 'classnames'
 import axios from 'axios-instance'
+import Logo from 'components/Logo/Logo'
 
 class Header extends Component {
   constructor(props) {
@@ -100,7 +101,8 @@ class Header extends Component {
       >
         <Container className={css.wrapper}>
           <Link to='/' style={{ fontSize: 0 }}>
-            <img className={css.logo} src='https://via.placeholder.com/120x50.jpg' alt='Логотип компании'/>
+            <Logo />
+            {/*<img className={css.logo} src='https://via.placeholder.com/120x50.jpg' alt='Логотип компании'/>*/}
           </Link>
           <button className={css.burger} type='button' onClick={this.handleClickBurger}>
             Управление адаптивным меню
