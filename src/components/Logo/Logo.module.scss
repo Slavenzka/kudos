@@ -7,10 +7,10 @@
   &::before {
     content: "";
     position: absolute;
-    top: -170%;
-    left: calc(50% - 8.8rem / 2);
-    width: 8.5rem;
-    height: 12rem;
+    top: -180%;
+    left: calc(50% - 62% / 2);
+    width: 60%;
+    height: 10.5rem;
     background-color: red;
     z-index: -1;
   }
@@ -19,21 +19,21 @@
     content: "";
     position: absolute;
     left: 0;
-    bottom: -135%;
+    bottom: -180%;
     width: 100%;
     height: 0.3rem;
     background-color: $colorMain;
     box-shadow:
-      0 -1.2rem 0 0 $colorMain,
-      0 -3.0rem 0 0 $colorMain;
+      0 -1rem 0 0 $colorMain,
+      0 -2.5rem 0 0 $colorMain;
   }
 }
 
 .icon {
   position: absolute;
-  top: -120%;
-  left: calc(50% - 3rem / 2);
-  width: 3rem;
-  height: 3rem;
+  top: -130%;
+  left: calc(50% - 2rem / 2);
+  width: 2.2rem;
+  height: 2.2rem;
   fill: $colorLightest;
 }
