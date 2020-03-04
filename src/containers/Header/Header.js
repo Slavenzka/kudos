@@ -41,12 +41,6 @@ class Header extends Component {
         scrollSize: window.scrollY
       }
     })
-
-    document.addEventListener('scroll', this.handleHeaderOnScroll)
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('scroll', this.handleHeaderOnScroll)
   }
 
   handleClickBurger = () => {
@@ -58,26 +52,10 @@ class Header extends Component {
     })
   }
 
-  handleHeaderOnScroll = () => {
-    // const headerHeight = this.headerRef.current.getBoundingClientRect().height
-    this.setState(prevState => {
-      return {
-        ...prevState,
-        isHeaderFixedVisible: window.scrollY > window.innerHeight / 4 * 2,
-        isHeaderFixedHidden: window.scrollY > this.state.scrollSize ? false : window.scrollY < window.innerHeight / 4 * 2,
-        isHeaderStatic: window.scrollY <= window.innerHeight / 4,
-        scrollSize: window.scrollY
-      }
-    })
-  }
-
   render () {
     const {
       headerData,
       isMenuVisible,
-      isHeaderFixedVisible,
-      isHeaderFixedHidden,
-      isHeaderStatic
     } = this.state
 
     const navigation = headerData && headerData.map((item, index) => {
@@ -91,18 +69,10 @@ class Header extends Component {
     })
 
     return (
-      <header
-        className={classNames(css.header, {
-          [css.headerFixed]: !isHeaderStatic,
-          [css.headerFixedHidden]: !isHeaderStatic && isHeaderFixedHidden,
-          [css.headerFixedVisible]: !isHeaderStatic && isHeaderFixedVisible
-        })}
-        ref={this.headerRef}
-      >
+      <header className={css.header}>
         <Container className={css.wrapper}>
           <Link to='/' style={{ fontSize: 0 }}>
             <Logo />
-            {/*<img className={css.logo} src='https://via.placeholder.com/120x50.jpg' alt='Логотип компании'/>*/}
           </Link>
           <button className={css.burger} type='button' onClick={this.handleClickBurger}>
             Управление адаптивным меню

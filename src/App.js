@@ -18,12 +18,6 @@ class App extends Component {
     this.headerRef = React.createRef()
   }
 
-  getSize = el => {
-    this.setState({
-      headerHeight: el.height
-    })
-  }
-
   render () {
     console.log(this.state.headerHeight)
     return (
@@ -36,7 +30,7 @@ class App extends Component {
           backgroundPosition: 'center bottom'
         }}
       >
-        <Header getSize={this.getSize} />
+        <Header />
         <Switch>
           <Route path='/' exact component={Home}/>
         </Switch>
