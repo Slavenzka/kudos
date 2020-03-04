@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/kudos/static/css/main.dfb37428.chunk.css",
-    "main.js": "/kudos/static/js/main.2b2620e2.chunk.js",
-    "main.js.map": "/kudos/static/js/main.2b2620e2.chunk.js.map",
+    "main.css": "/kudos/static/css/main.754e18df.chunk.css",
+    "main.js": "/kudos/static/js/main.7bacf06d.chunk.js",
+    "main.js.map": "/kudos/static/js/main.7bacf06d.chunk.js.map",
     "runtime-main.js": "/kudos/static/js/runtime-main.6318405f.js",
     "runtime-main.js.map": "/kudos/static/js/runtime-main.6318405f.js.map",
     "static/css/2.698563d4.chunk.css": "/kudos/static/css/2.698563d4.chunk.css",
     "static/js/2.09c6ab3c.chunk.js": "/kudos/static/js/2.09c6ab3c.chunk.js",
     "static/js/2.09c6ab3c.chunk.js.map": "/kudos/static/js/2.09c6ab3c.chunk.js.map",
     "index.html": "/kudos/index.html",
-    "precache-manifest.1eea729a3b6d1262ee44cd38144e5a32.js": "/kudos/precache-manifest.1eea729a3b6d1262ee44cd38144e5a32.js",
+    "precache-manifest.6c2249d0ec764c2f41554233333cd02f.js": "/kudos/precache-manifest.6c2249d0ec764c2f41554233333cd02f.js",
     "service-worker.js": "/kudos/service-worker.js",
     "static/css/2.698563d4.chunk.css.map": "/kudos/static/css/2.698563d4.chunk.css.map",
-    "static/css/main.dfb37428.chunk.css.map": "/kudos/static/css/main.dfb37428.chunk.css.map",
+    "static/css/main.754e18df.chunk.css.map": "/kudos/static/css/main.754e18df.chunk.css.map",
     "static/js/2.09c6ab3c.chunk.js.LICENSE": "/kudos/static/js/2.09c6ab3c.chunk.js.LICENSE",
     "static/media/common.scss": "/kudos/static/media/beltheder-palmyra.623289f8.woff"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.6318405f.js",
     "static/css/2.698563d4.chunk.css",
     "static/js/2.09c6ab3c.chunk.js",
-    "static/css/main.dfb37428.chunk.css",
-    "static/js/main.2b2620e2.chunk.js"
+    "static/css/main.754e18df.chunk.css",
+    "static/js/main.7bacf06d.chunk.js"
   ]
 }
