@@ -37,7 +37,7 @@ class Home extends Component {
           type: 'long',
           url: '/',
           img: 'assets/images/catalog__item--low.jpg',
-          heading: 'Коммутационное оборудовапние низкого напряжения (КРУ, НКУ, ЩПТ)',
+          heading: 'Коммутационное оборудование низкого напряжения (КРУ, НКУ, ЩПТ)',
         },
         {
           type: 'row',
