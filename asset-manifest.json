@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/kudos/static/css/main.7261934b.chunk.css",
+    "main.css": "/kudos/static/css/main.09b598bd.chunk.css",
     "main.js": "/kudos/static/js/main.1a290d4b.chunk.js",
     "main.js.map": "/kudos/static/js/main.1a290d4b.chunk.js.map",
     "runtime-main.js": "/kudos/static/js/runtime-main.6318405f.js",
@@ -9,10 +9,10 @@
     "static/js/2.05367ab5.chunk.js": "/kudos/static/js/2.05367ab5.chunk.js",
     "static/js/2.05367ab5.chunk.js.map": "/kudos/static/js/2.05367ab5.chunk.js.map",
     "index.html": "/kudos/index.html",
-    "precache-manifest.83f4daa4c2e0dda0ed216af0685af1f6.js": "/kudos/precache-manifest.83f4daa4c2e0dda0ed216af0685af1f6.js",
+    "precache-manifest.e82007663b597610cac893974bd3bbdc.js": "/kudos/precache-manifest.e82007663b597610cac893974bd3bbdc.js",
     "service-worker.js": "/kudos/service-worker.js",
     "static/css/2.698563d4.chunk.css.map": "/kudos/static/css/2.698563d4.chunk.css.map",
-    "static/css/main.7261934b.chunk.css.map": "/kudos/static/css/main.7261934b.chunk.css.map",
+    "static/css/main.09b598bd.chunk.css.map": "/kudos/static/css/main.09b598bd.chunk.css.map",
     "static/js/2.05367ab5.chunk.js.LICENSE": "/kudos/static/js/2.05367ab5.chunk.js.LICENSE",
     "static/media/common.scss": "/kudos/static/media/beltheder-palmyra.623289f8.woff"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.6318405f.js",
     "static/css/2.698563d4.chunk.css",
     "static/js/2.05367ab5.chunk.js",
-    "static/css/main.7261934b.chunk.css",
+    "static/css/main.09b598bd.chunk.css",
     "static/js/main.1a290d4b.chunk.js"
   ]
 }
