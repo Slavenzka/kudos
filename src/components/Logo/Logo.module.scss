@@ -42,3 +42,9 @@
   height: 2.2rem;
   fill: $colorLightest;
 }
+
+@media (max-width: 767px) {
+  .wrapper {
+    transform: scale(0.8);
+  }
+}

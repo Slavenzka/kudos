@@ -1,8 +1,14 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
+.title {
+  margin: 0;
+  @include h2;
+}
+
 .wrapper {
   position: relative;
+  margin-top: 3rem;
 
   :global {
     .swiper-wrapper {
@@ -11,30 +17,63 @@
   }
 }
 
-.item {
+.itemWrapper {
   display: flex;
   align-items: center;
+  padding: 3rem;
+  height: 12rem;
+  background-color: $colorLightest;
 }
 
-.controls {
-  position: absolute;
-  display: flex;
-  width: 100%;
-  z-index: 1;
+.logo {
+  filter: grayscale(1);
+  transition-duration: 0.3s;
+}
+
+.item:hover {
+  .logo {
+    filter: grayscale(0);
+  }
 }
 
 .button {
   position: absolute;
-  left: -5rem;
+  top: 3.5rem;
+  left: -7%;
   margin: 0;
   padding: 0;
+  width: 5rem;
+  height: 5rem;
   font-size: 0;
+  background-color: transparent;
   border: none;
   box-shadow: none;
+  z-index: 2;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 2.5rem solid transparent;
+    border-right: 5rem solid $colorLightest;
+    border-bottom: 2.5rem solid transparent;
+    transition-duration: 0.3s;
+  }
+
+  &:hover:not(.buttonDisabled),
+  &:focus:not(.buttonDisabled) {
+    &::before {
+      border-right-color: $colorHighlightRed;
+    }
+  }
 }
 
 .buttonNext {
-  right: -5rem;
+  right: -7%;
   margin-left: auto;
   transform: rotate(180deg);
 }
@@ -46,8 +85,62 @@
 
 .logo {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .icon {
   fill: black;
+}
+
+:global {
+  .manufacturers-swiper-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    padding: 0 20%;
+
+    .swiper-pagination-bullet-active {
+      background-color: $colorHighlightRed;
+    }
+
+    .swiper-pagination-bullet:not(.swiper-pagination-bullet-active) {
+      background-color: white;
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 1350px) {
+  .button {
+    top: 4.5rem;
+    left: -5%;
+    width: 3rem;
+    height: 3rem;
+
+    &::before {
+      border-top: 1.5rem solid transparent;
+      border-right: 3rem solid $colorLightest;
+      border-bottom: 1.5rem solid transparent;
+    }
+  }
+
+  .buttonNext {
+    right: -5%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .button {
+    top: calc(100% - 8rem);
+    left: 0;
+  }
+
+  .buttonNext {
+    right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+
 }

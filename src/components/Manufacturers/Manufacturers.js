@@ -7,15 +7,11 @@ import Swiper from 'react-id-swiper'
 import classnames from 'classnames'
 
 class Manufacturers extends Component {
-  constructor (props) {
-    super(props)
-    this.controlsRef = React.createRef()
-  }
-
   swiper = null
 
   state = {
     activeIndex: 0,
+    isSliderWithSingleSlide: false,
     modal: {
       isVisible: false,
       content: null
@@ -42,14 +38,6 @@ class Manufacturers extends Component {
       <path d='M16.02 9.59302L9.6123 16.0007L16.02 22.4068V17.6006H22.4101V14.4008H16.02V9.59302Z' />
     </svg>
   )
-
-  componentDidMount () {
-    // set div with controls to be in the middle of the slider area
-    if (this.controlsRef.current) {
-      const controlsHeight = this.controlsRef.current.getBoundingClientRect().height / 2
-      this.controlsRef.current.style.top = `calc(50% - ${controlsHeight}px)`
-    }
-  }
 
   handleEscPress = evt => {
     if (evt.keyCode === 27) {
@@ -94,13 +82,31 @@ class Manufacturers extends Component {
 
   render () {
     const { title, list } = this.props
-    const { activeIndex, modal } = this.state
-    const slideLastIndex = list.length - 1
+    const { activeIndex, modal, isSliderWithSingleSlide } = this.state
 
     const params = {
       slidesPerView: 5,
       spaceBetween: 30,
-      speed: 1500,
+      speed: 1000,
+      watchOverflow: true,
+      navigation: {
+        nextEl: '.manufacturers-swiper-button-next',
+        prevEl: '.manufacturers-swiper-button-prev',
+      },
+      pagination: {
+        el: '.manufacturers-swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 15
+        },
+        1280: {
+          slidesPerView: 4,
+          spaceBetween: 15
+        }
+      },
       on: {
         slideChangeTransitionStart: () => {
           if (this.swiper) {
@@ -108,24 +114,51 @@ class Manufacturers extends Component {
             this.setState({ activeIndex })
           }
         },
+        reachEnd: () => {
+          if (!this.swiper) {
+            this.setState(prevState => {
+              return {
+                ...prevState,
+                isSliderWithSingleSlide: true
+              }
+            })
+          }
+        },
+        resize: () => {
+          this.setState(prevState => {
+            return {
+              ...prevState,
+              isSliderWithSingleSlide: this.swiper.activeIndex === 0 && this.swiper.isEnd
+            }
+          })
+        },
+        init: () => {
+          this.setState(prevState => {
+            return {
+              ...prevState,
+              isSliderWithSingleSlide: this.swiper.activeIndex === 0 && this.swiper.isEnd
+            }
+          })
+        }
       }
     }
 
     const gallery = list.map((item, index) => {
       return (
-        <div className={css.item} key={index}>
-          <img
-            src={item.img}
-            alt={`Логотип ${item.name}`}
-            className={css.logo}
-            onClick={() => this.handleLogoClick(index)}
-          />
-          {/*{item.modal && <Modal isVisible={this.state.clickedItem === index} />}*/}
+        <div className={css.item} key={index} style={{ cursor: item.modal && 'pointer' }}>
+          <div className={css.itemWrapper}>
+            <img
+              src={item.img}
+              alt={`Логотип ${item.name}`}
+              className={css.logo}
+              onClick={() => this.handleLogoClick(index)}
+            />
+          </div>
         </div>
       )
     })
     return (
-      <section className={css.section}>
+      <section className='section'>
         {this.state.modal.isVisible && this.state.modal.content &&
           <Modal isVisible={modal.isVisible} content={modal.content} close={this.handleClickModalClose} />}
         <Container>
@@ -136,23 +169,26 @@ class Manufacturers extends Component {
             <Swiper {...params} ref={node => { if (node) this.swiper = node.swiper }}>
               {list.length > 0 && gallery}
             </Swiper>
-          {slideLastIndex + 1 !== params.slidesPerView &&
-            <div className={css.controls} ref={this.controlsRef}>
+          {!isSliderWithSingleSlide &&
+            <>
               <button
-                className={classnames(css.button, { [css.buttonDisabled]: activeIndex === 0 })}
+                className={classnames('.partners-swiper-button-prev', css.button, { [css.buttonDisabled]: activeIndex === 0 })}
                 onClick={this.goPrev}
               >
                 Предыдущий слайд
-                {this.icon()}
+                {/*{this.icon()}*/}
               </button>
+              <div className={'manufacturers-swiper-pagination'}>
+
+              </div>
               <button
-                className={classnames(css.button, css.buttonNext, { [css.buttonDisabled]: activeIndex === slideLastIndex })}
+                className={classnames('.partners-swiper-button-next', css.button, css.buttonNext, { [css.buttonDisabled]: this.swiper && this.swiper.isEnd })}
                 onClick={this.goNext}
               >
                 Следующий слайд
-                {this.icon()}
+                {/*{this.icon()}*/}
               </button>
-            </div>
+            </>
           }
         </div>
         </Container>

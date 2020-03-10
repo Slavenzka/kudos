@@ -82,3 +82,21 @@
   text-transform: uppercase;
   border: 1px solid $colorLightest;
 }
+
+@media (max-width: 767px) {
+  .list {
+    display: block;
+  }
+
+  .item {
+    height: 15rem;
+
+    &:not(:first-of-type) {
+      margin-top: 1rem;
+    }
+  }
+
+  .card {
+    opacity: 1;
+  }
+}

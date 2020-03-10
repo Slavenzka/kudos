@@ -1,2 +1,63 @@
 @import "styles/variables";
-@import "styles/common";
+@import "styles/mixins";
+
+.wrapper {
+  position: relative;
+}
+
+.balloon {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  padding: 2rem;
+  width: 25rem;
+  max-height: calc(100% - 4rem);
+  overflow-y: auto;
+  background-color: $colorMain;
+  z-index: 1;
+}
+
+.title {
+  margin: 0;
+  @include h3($colorHighlightRed);
+}
+
+.address {
+  margin: 1rem 0 0 0;
+  @include fontRegular($colorLightest);
+}
+
+.list {
+  margin: 2rem 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  &:not(:first-of-type) {
+    margin-top: 1rem;
+  }
+}
+
+.link {
+  @include fontRegular($colorLightest);
+  transition-duration: 0.3s;
+
+  &:hover,
+  &:active {
+    color: $colorHighlightRed;
+  }
+}
+
+.map {
+  width: 100%;
+  height: 30rem;
+}
+
+@media (max-width: 767px) {
+  .balloon {
+    position: static;
+    width: 100%;
+    background-color: transparent;
+  }
+}

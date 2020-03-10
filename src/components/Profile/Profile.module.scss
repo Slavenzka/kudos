@@ -4,14 +4,29 @@
 .wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .img {
-  width: 45%;
-  height: 30rem;
+  width: 40%;
+  height: 50rem;
   object-fit: cover;
 }
 
 .content {
   width: 50%;
+}
+
+.name {
+  margin: 0;
+  @include h3;
+}
+
+.rank {
+  display: block;
+  @include fontSmall;
+}
+
+.description {
+  @include fontRegular;
 }

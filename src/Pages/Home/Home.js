@@ -57,9 +57,12 @@ class Home extends Component {
         descriptor: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below ' +
           'for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum"' +
           'by Cicero are also reproduced in their exact original form, accompanied by English versions' +
+          'from the 1914 translation by H. Rackham. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below ' +
+          'for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum"' +
+          'by Cicero are also reproduced in their exact original form, accompanied by English versions' +
           'from the 1914 translation by H. Rackham.',
         manager: {
-          photo: 'assets/images/about__manager.jpg',
+          photo: 'assets/images/about__photo.jpg',
           name: 'Иванов Иван Иванович',
           rank: 'Менеджер по продажам',
           descriptor: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor' +
@@ -100,13 +103,12 @@ class Home extends Component {
         ]
       },
       contacts: {
-        mapCenter: {
-          lat: 55.758035,
-          lng: 37.619019
-        },
-        mapMarker: {
-          lat: 55.758035,
-          lng: 37.619019
+        mapMarker: [ 55.757860, 37.619815 ],
+        balloonData: {
+          title: 'ООО "Ятсан Групп"',
+          address: '111111 Москва, ул. Такаято, дом 999, стр. 99, офис 999',
+          phone: [ '8 495 999 99 99', '8 495 999 99 99' ],
+          email: [ 'smth@smth.smth' ],
         }
       }
     }
@@ -120,18 +122,15 @@ class Home extends Component {
   render () {
     return (
       <main>
-        <h1 className='visuallyHidden'>Информация и предлагаемый ассортимент компании ООО "Престиж"</h1>
+        <h1 className='visuallyHidden'>Сведения об ООО "Ятсан Групп" и предлагаемая электротехническая продукция</h1>
         <Catalog data={this.data.catalog} />
         <About data={this.data.about} />
         <Manufacturers {...this.data.manufacturers} />
-        <Map
-          data={this.data.contacts}
-          isMarkerShown
-          googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3sboheowgOrwdg6ocSAhTMIDwWfeXm1c&v=3.exp&libraries=geometry,drawing,places"
-          loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `400px` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
-        />
+        <section className='section map'>
+          <Map
+            data={this.data.contacts}
+          />
+        </section>
       </main>
     )
   }
