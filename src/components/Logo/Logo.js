@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import css from './Logo.module.scss'
 import { Link } from 'react-router-dom'
+import classnames from 'classnames'
 
 class Logo extends Component {
   icon = () => (
@@ -11,7 +12,7 @@ class Logo extends Component {
 
   render () {
     return (
-      <Link to='/' className={css.wrapper}>
+      <Link to='/' className={classnames(css.wrapper, this.props.className)}>
         {this.icon()}
         <span>
           Ятсан Групп

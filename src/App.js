@@ -9,25 +9,12 @@ import { Switch, Route } from 'react-router-dom'
 // styles
 
 class App extends Component {
-  state = {
-    headerHeight: null
-  }
-
-  constructor() {
-    super()
-    this.headerRef = React.createRef()
-  }
-
   render () {
-    console.log(this.state.headerHeight)
     return (
       <div
+        className='siteWrapper'
         style={{
-          paddingTop: `${this.state.headerHeight || 0}px`,
           backgroundImage: 'url("assets/images/lines.png")',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center bottom'
         }}
       >
         <Header />

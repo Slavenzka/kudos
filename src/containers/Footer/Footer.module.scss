@@ -1,13 +1,38 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .wrapper {
-  padding: 2rem 0;
+  padding: 3rem 0;
   width: 100%;
-  background-color: $colorDark;
+  background-color: transparent;
 }
 
 .container {
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   color: white;
+}
+
+.logo {
+  color: transparent;
+  transform: scale(0.6);
+}
+
+.creator {
+  position: absolute;
+  top: calc(100% - 2rem);
+  right: calc(50% - 8rem);
+  @include fontSmall($colorDarker);
+}
+
+.link {
+  display: block;
+  color: $colorLightest;
+  transition-duration: 0.3s;
+
+  &:hover {
+    color: $colorHighlightRed;
+  }
 }
