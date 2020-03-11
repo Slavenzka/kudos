@@ -2,6 +2,7 @@ import React from 'react'
 import css from './Modal.module.scss'
 import classnames from 'classnames'
 import Container from 'components/Grid/Container'
+import CloseIcon from 'components/CloseIcon/CloseIcon'
 
 const Modal = ({ isVisible, content, close, children }) => {
   return (
@@ -9,7 +10,9 @@ const Modal = ({ isVisible, content, close, children }) => {
       <Container className={css.container}>
         <div className={css.back} onClick={close} />
         <div className={css.inner}>
-          <button className={css.button} type='button' aria-label='Закрыть окно' onClick={close} />
+          <button className={css.button} type='button' aria-label='Закрыть окно' onClick={close}>
+            <CloseIcon className={css.icon} />
+          </button>
           {content &&
             <>
               {content.img &&

@@ -46,13 +46,18 @@
   margin-top: 0.5rem;
   width: 57%;
   transform: rotate(90deg);
-  fill: $colorLightest;
-  stroke: $colorLightest;
+  fill: $colorMain;
+  stroke: $colorMain;
   transition-duration: 0.3s;
 }
 
 .btnVisible {
   transform: translateY(0);
+
+  .icon {
+    fill: $colorLightest;
+    stroke: $colorLightest;
+  }
 }
 
 @media (max-width: 767px) {
