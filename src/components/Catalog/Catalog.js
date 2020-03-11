@@ -32,14 +32,12 @@ const Catalog = ({ data }) => {
   })
 
   return (
-    <section>
-      <Container>
-        <h2 className="visuallyHidden">Рубрики каталога предлагаемой продукции</h2>
-        <ul className={css.list}>
-          {categories}
-        </ul>
-      </Container>
-    </section>
+    <Container>
+      <h2 className="visuallyHidden">Рубрики каталога предлагаемой продукции</h2>
+      <ul className={css.list}>
+        {categories}
+      </ul>
+    </Container>
   )
 }
 
