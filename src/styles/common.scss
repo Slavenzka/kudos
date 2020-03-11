@@ -10,6 +10,7 @@ body {
   padding: 0;
   font-family: "Roboto", serif;
   background-color: $colorMain;
+  scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
