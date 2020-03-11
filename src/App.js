@@ -6,7 +6,7 @@ import Footer from 'containers/Footer/Footer'
 import Home from "Pages/Home/Home";
 // packages
 import { Switch, Route } from 'react-router-dom'
-import Category from 'Pages/Category'
+import Category from 'Pages/Category/Category'
 // styles
 
 class App extends Component {
