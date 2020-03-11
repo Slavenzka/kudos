@@ -22,15 +22,17 @@
 
 .creator {
   position: absolute;
-  top: calc(100% - 2rem);
+  top: calc(100% - 1rem);
   right: calc(50% - 8rem);
   @include fontSmall($colorDarker);
+  line-height: 1.1;
 }
 
 .link {
   display: block;
   color: $colorLightest;
   transition-duration: 0.3s;
+  letter-spacing: 1px;
 
   &:hover {
     color: $colorHighlightRed;
