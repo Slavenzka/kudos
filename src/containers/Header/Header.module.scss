@@ -58,6 +58,7 @@
   display: block;
   @include fontNavigation;
   transition-duration: 0.3s;
+  cursor: pointer;
 
   &::before {
     content: "";

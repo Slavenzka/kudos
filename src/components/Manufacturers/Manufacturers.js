@@ -158,9 +158,10 @@ class Manufacturers extends Component {
       )
     })
     return (
-      <section className='section'>
+      <>
         {this.state.modal.isVisible && this.state.modal.content &&
-          <Modal isVisible={modal.isVisible} content={modal.content} close={this.handleClickModalClose} />}
+          <Modal isVisible={modal.isVisible} content={modal.content} close={this.handleClickModalClose} />
+        }
         <Container>
           <h2 className={css.title}>
             {title}
@@ -192,7 +193,7 @@ class Manufacturers extends Component {
           }
         </div>
         </Container>
-      </section>
+      </>
     )
 
   }

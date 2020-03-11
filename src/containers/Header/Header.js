@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import css from 'containers/Header/Header.module.scss'
-import { Link, withRouter } from "react-router-dom"
 import Container from "components/Grid/Container"
 import classNames from 'classnames'
 import axios from 'axios-instance'
@@ -50,7 +49,19 @@ class Header extends Component {
     })
   }
 
+  handleClickAnchor = (e, el) => {
+    e.preventDefault()
+    el.scrollIntoView({behavior:"smooth"})
 
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        isMenuVisible: false
+      }
+    })
+  }
+
+  // assemble of burger svg
   icon = () => (
     <svg className={css.icon} viewBox='0 0 35 25' stroke="none" xmlns='http://www.w3.org/2000/svg'>
       <rect x="0" y="0" width="35" height="2" style={{ transitionDuration: '0.3s', transform: this.state.isMenuVisible ? 'translateX(-100%)' : 'translateX(0)' }} />
@@ -82,9 +93,9 @@ class Header extends Component {
             transitionDelay: `${index * 0.07}s`
           }}
         >
-          <Link to={item.url} className={css.link}>
+          <a href={item.url} className={css.link} onClick={e => this.handleClickAnchor(e, this.props[item.url])}>
             {item.text}
-          </Link>
+          </a>
         </li>
       )
     })
@@ -110,4 +121,4 @@ class Header extends Component {
   }
 }
 
-export default withRouter(Header);
+export default Header

@@ -120,13 +120,26 @@ class Home extends Component {
   }
 
   render () {
+    const {
+      // ref creation methods from App.js for ahchor scrolling without Redux
+      setCatalogRef,
+      setAboutRef,
+      setManufacturersRef,
+      setContactsRef
+    } = this.props
     return (
       <main>
         <h1 className='visuallyHidden'>Сведения об ООО "Ятсан Групп" и предлагаемая электротехническая продукция</h1>
-        <Catalog data={this.data.catalog} />
-        <About data={this.data.about} />
-        <Manufacturers {...this.data.manufacturers} />
-        <section className='section map'>
+        <section ref={setCatalogRef}>
+          <Catalog data={this.data.catalog} />
+        </section>
+        <section className='section' ref={setAboutRef}>
+          <About data={this.data.about} />
+        </section>
+        <section className='section' ref={setManufacturersRef}>
+          <Manufacturers {...this.data.manufacturers} />
+        </section>
+        <section className='section map' ref={setContactsRef}>
           <Map
             data={this.data.contacts}
           />
