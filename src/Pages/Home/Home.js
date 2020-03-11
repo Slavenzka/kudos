@@ -82,7 +82,7 @@ class Home extends Component {
             img: 'assets/images/logo-uemz.png',
             name: 'Название предприятия',
             modal: {
-              img: 'assets/images/no-photo.svg',
+              img: 'assets/images/certificate example.jpg',
               alt: 'Some alt text'
             }
           },
@@ -94,7 +94,8 @@ class Home extends Component {
             img: 'assets/images/logo-enelt.png',
             name: 'Название предприятия',
             modal: {
-              descriptor: 'А можно и привести и просто текстовую информацию'
+              img: 'assets/images/certificate example2.jpg',
+              alt: 'Some alt text'
             }
           },
           {
