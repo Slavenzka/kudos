@@ -3,6 +3,7 @@ import Catalog from 'components/Catalog/Catalog'
 import About from 'components/About/About'
 import Manufacturers from 'components/Manufacturers/Manufacturers'
 import Map from 'components/Map/Map'
+import withScrollBackBtn from 'hoc/withScrollBackBtn/withScrollBackBtn'
 
 class Home extends Component {
   constructor() {
@@ -149,4 +150,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default withScrollBackBtn(Home)

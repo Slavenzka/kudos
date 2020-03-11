@@ -1,0 +1,62 @@
+@import "styles/mixins";
+@import "styles/variables";
+
+.btn {
+  position: fixed;
+  bottom: 5rem;
+  right: 5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+  width: 5rem;
+  height: 6rem;
+  font-size: 0;
+  background-color: red;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  transform: translateY(11rem);
+  transition-duration: 0.3s;
+  cursor: pointer;
+  z-index: 2;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $colorMain;
+    box-shadow:
+      0 -6px 0 0 $colorMain,
+      0 -14px 0 0 $colorMain;
+  }
+
+  &:hover {
+    .icon {
+      fill: $colorMain;
+      stroke: $colorMain;
+    }
+  }
+}
+
+.icon {
+  margin-top: 0.5rem;
+  width: 57%;
+  transform: rotate(90deg);
+  fill: $colorLightest;
+  stroke: $colorLightest;
+  transition-duration: 0.3s;
+}
+
+.btnVisible {
+  transform: translateY(0);
+}
+
+@media (max-width: 767px) {
+  .btn {
+    right: 1rem;
+  }
+}
