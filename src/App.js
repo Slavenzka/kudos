@@ -6,6 +6,7 @@ import Footer from 'containers/Footer/Footer'
 import Home from "Pages/Home/Home";
 // packages
 import { Switch, Route } from 'react-router-dom'
+import Category from 'Pages/Category'
 // styles
 
 class App extends Component {
@@ -75,6 +76,11 @@ class App extends Component {
                 setContactsRef={this.setContactsRef}
               />
             )}
+          />
+          <Route
+            path='/category'
+            exact
+            component={Category}
           />
         </Switch>
         <Footer/>
