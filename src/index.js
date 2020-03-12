@@ -8,11 +8,22 @@ import 'styles/common.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { HashRouter } from 'react-router-dom';
+import { createStore, combineReducers } from 'redux'
+import { Provider } from 'react-redux'
+import setRefs from 'store/reducers/setRefs'
+
+const rootReducer = combineReducers({
+  refs: setRefs
+})
+
+const store = createStore(rootReducer)
 
 const Page = (
-  <HashRouter basename='/'>
-    <App />
-  </HashRouter>
+  <Provider store={store}>
+    <HashRouter basename='/'>
+      <App />
+    </HashRouter>
+  </Provider>
 );
 
 ReactDOM.render(Page, document.getElementById('root'));

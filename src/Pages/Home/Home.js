@@ -4,10 +4,18 @@ import About from 'components/About/About'
 import Manufacturers from 'components/Manufacturers/Manufacturers'
 import Map from 'components/Map/Map'
 import withScrollBackBtn from 'hoc/withScrollBackBtn/withScrollBackBtn'
+import { connect } from 'react-redux'
+import { setSectionRefs } from 'store/actions/setRefs'
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setRefs: (obj) => dispatch(setSectionRefs(obj))
+  }
+}
 
 class Home extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.data = {
       catalog: [
         {
@@ -114,34 +122,67 @@ class Home extends Component {
         }
       }
     }
+
+    this.catalogRef = null
+    this.aboutRef = null
+    this.manufacturersRef = null
+    this.contactsRef = null
+
+    this.setCatalogRef = element => {
+      this.catalogRef = element
+    }
+
+    this.setAboutRef = element => {
+      this.aboutRef = element
+    }
+
+    this.setManufacturersRef = element => {
+      this.manufacturersRef = element
+    }
+
+    this.setContactsRef = element => {
+      this.contactsRef = element
+    }
   }
   state = {}
 
   componentDidMount() {
     // axios get request
+    if (this.catalogRef && this.aboutRef && this.manufacturersRef && this.contactsRef) {
+      this.props.setRefs({
+        catalog: this.catalogRef,
+        about: this.aboutRef,
+        manufacturers: this.manufacturersRef,
+        contacts: this.contactsRef
+      })
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.catalogRef && this.aboutRef && this.manufacturersRef && this.contactsRef) {
+      this.props.setRefs({
+        catalog: this.catalogRef,
+        about: this.aboutRef,
+        manufacturers: this.manufacturersRef,
+        contacts: this.contactsRef
+      })
+    }
   }
 
   render () {
-    const {
-      // ref creation methods from App.js for ahchor scrolling without Redux
-      setCatalogRef,
-      setAboutRef,
-      setManufacturersRef,
-      setContactsRef
-    } = this.props
     return (
       <main>
         <h1 className='visuallyHidden'>Сведения об ООО "Ятсан Групп" и предлагаемая электротехническая продукция</h1>
-        <section ref={setCatalogRef}>
+        <section ref={this.setCatalogRef}>
           <Catalog data={this.data.catalog} />
         </section>
-        <section className='section' ref={setAboutRef}>
+        <section className='section' ref={this.setAboutRef}>
           <About data={this.data.about} />
         </section>
-        <section className='section' ref={setManufacturersRef}>
+        <section className='section' ref={this.setManufacturersRef}>
           <Manufacturers {...this.data.manufacturers} />
         </section>
-        <section className='section map' ref={setContactsRef}>
+        <section className='section map' ref={this.setContactsRef}>
           <Map
             data={this.data.contacts}
           />
@@ -151,4 +192,4 @@ class Home extends Component {
   }
 }
 
-export default withScrollBackBtn(Home)
+export default connect(null, mapDispatchToProps)(withScrollBackBtn(Home))
