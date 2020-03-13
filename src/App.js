@@ -23,9 +23,7 @@ class App extends Component {
           <Route
             path='/'
             exact
-            render={() => (
-              <Home {...this.props} />
-            )}
+            render={() => <Home {...this.props} />}
           />
           <Route
             path='/category'

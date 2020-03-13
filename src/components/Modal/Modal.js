@@ -1,8 +1,8 @@
 import React from 'react'
 import css from './Modal.module.scss'
 import classnames from 'classnames'
-import Container from 'components/Grid/Container'
-import CloseIcon from 'components/CloseIcon/CloseIcon'
+import Container from 'components/common/Grid/Container'
+import CloseIcon from 'components/common/CloseIcon/CloseIcon'
 
 const Modal = ({ isVisible, content, close, children }) => {
   return (

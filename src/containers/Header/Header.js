@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import css from 'containers/Header/Header.module.scss'
-import Container from "components/Grid/Container"
+import Container from "components/common/Grid/Container"
 import classNames from 'classnames'
 import axios from 'axios-instance'
-import Logo from 'components/Logo/Logo'
+import Logo from 'components/common/Logo/Logo'
 import { getCoords } from 'utils'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'

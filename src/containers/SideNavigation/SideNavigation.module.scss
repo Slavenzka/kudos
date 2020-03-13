@@ -1,0 +1,90 @@
+@import "styles/mixins";
+@import "styles/variables";
+
+.btn {
+  display: none;
+
+  .icon {
+    width: 3rem;
+    transform: rotate(0);
+    transition-duration: 0.3s;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  &:not(:first-of-type) {
+    margin-top: 2rem;
+  }
+}
+
+.link {
+  position: relative;
+  display: block;
+  @include fontRegular($colorDarker);
+  text-transform: uppercase;
+  transition-duration: 0.3s;
+
+  &:hover {
+    color: $colorHighlightRed;
+
+    &::before {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .btn {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
+    //width: 5rem;
+    height: 5rem;
+    @include fontRegular($colorHighlightRed);
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+  .btnOpened {
+    .icon {
+      transform: rotate(45deg);
+    }
+  }
+
+
+  .list {
+    align-items: stretch;
+    padding: 2rem 0;
+  }
+
+  .item {
+    text-align: center;
+
+    &:not(:first-of-type) {
+      margin-top: 0;
+    }
+  }
+
+  .link {
+    padding: 1rem 0;
+  }
+
+  :global {
+    .ReactCollapse--collapse {
+      transition: height 500ms;
+    }
+  }
+}

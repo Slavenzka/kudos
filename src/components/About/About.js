@@ -1,6 +1,6 @@
 import React from 'react'
 import css from 'components/About/About.module.scss'
-import Container from 'components/Grid/Container'
+import Container from 'components/common/Grid/Container'
 import Profile from 'components/Profile/Profile'
 
 const About = ({ data }) => {

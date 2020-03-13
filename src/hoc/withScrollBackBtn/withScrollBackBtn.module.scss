@@ -24,14 +24,14 @@
   &::before {
     content: "";
     position: absolute;
-    bottom: 2px;
+    bottom: 0.2rem;
     left: 0;
     width: 100%;
     height: 2px;
     background-color: $colorMain;
     box-shadow:
-      0 -6px 0 0 $colorMain,
-      0 -14px 0 0 $colorMain;
+      0 -0.6rem 0 0 $colorMain,
+      0 -1.4rem 0 0 $colorMain;
   }
 
   &:hover {
@@ -63,5 +63,9 @@
 @media (max-width: 767px) {
   .btn {
     right: 1rem;
+
+    &::before {
+      height: 1px;
+    }
   }
 }

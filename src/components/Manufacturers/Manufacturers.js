@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import css from './Manufacturers.module.scss'
-import Container from 'components/Grid/Container'
+import Container from 'components/common/Grid/Container'
 import Modal from 'components/Modal/Modal'
 import 'react-id-swiper/src/styles/css/swiper.css'
 import Swiper from 'react-id-swiper'
@@ -18,13 +18,13 @@ class Manufacturers extends Component {
     }
   }
 
-  goNext = (speed = 500) => {
+  goNext = () => {
     if (this.swiper) {
       this.swiper.slideNext()
     }
   }
 
-  goPrev = (speed = 500) => {
+  goPrev = () => {
     if (this.swiper) this.swiper.slidePrev()
   }
 
@@ -58,7 +58,7 @@ class Manufacturers extends Component {
       return {
         ...prevState,
         modal: {
-          isVisible: true,
+          isVisible: this.props.list[index].modal || false,
           content: this.props.list[index].modal || null
         }
       }

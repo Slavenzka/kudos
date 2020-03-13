@@ -1,9 +1,9 @@
 import React from 'react'
-import Container from 'components/Grid/Container'
+import Container from 'components/common/Grid/Container'
 import { Map, Placemark, YMaps, ZoomControl } from 'react-yandex-maps'
 import css from './Map.module.scss'
 
-const ContactMap = ({ data, ...props }) => {
+const ContactMap = ({ data }) => {
   const { balloonData, mapMarker } = data
 
   const mapData = {

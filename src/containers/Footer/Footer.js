@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import css from 'containers/Footer/Footer.module.scss'
-import Container from "components/Grid/Container";
-import Logo from 'components/Logo/Logo'
-import classnames from 'classnames'
+import Container from "components/common/Grid/Container";
+import Logo from 'components/common/Logo/Logo'
 
 class Footer extends Component {
   render () {
     return (
-      <footer className={classnames(css.wrapper, 'section')}>
+      <footer className={css.wrapper}>
         <Container>
           <div className={css.container}>
             <Logo className={css.logo} />
