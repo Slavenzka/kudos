@@ -1,5 +1,5 @@
 import React from 'react'
-import css from './CloseIcon.module.scss'
+import css from 'components/common/CloseIcon/CloseIcon.module.scss'
 import classnames from 'classnames'
 
 const CloseIcon = ({ className }) => (

@@ -53,6 +53,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.1",
     "react-app-polyfill": "^1.0.5",
+    "react-collapse": "^5.0.1",
     "react-dev-utils": "^10.0.0",
     "react-device-detect": "^1.11.14",
     "react-dom": "^16.12.0",

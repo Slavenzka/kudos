@@ -1,0 +1,78 @@
+@import "styles/mixins";
+@import "styles/variables";
+
+.title {
+  margin: 0;
+  @include h2;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 30rem;
+  grid-gap: 2rem;
+  margin: 3rem 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  overflow: hidden;
+}
+
+.link {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(1);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition-duration: 0.3s;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 0;
+    }
+
+    .subtitle {
+      opacity: 0;
+    }
+  }
+}
+
+.subtitle {
+  position: relative;
+  margin: 0;
+  padding: 1.2rem 2.5rem;
+  max-width: 80%;
+  @include catalogLabel;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid $colorLightest;
+  transition-duration: 0.3s;
+}
+
+@media (max-width: 767px) {
+  .title {
+    text-align: center;
+  }
+
+  .list {
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    grid-gap: 1rem;
+  }
+}

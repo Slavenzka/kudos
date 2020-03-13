@@ -37,6 +37,14 @@
   }
 }
 
+@mixin fontBreadcrumbs($color: $colorDarker) {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: $color;
+}
+
 @mixin fontSmall($color: $colorDarker) {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;

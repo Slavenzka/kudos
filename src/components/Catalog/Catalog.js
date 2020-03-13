@@ -1,5 +1,5 @@
 import React from 'react'
-import Container from 'components/Grid/Container'
+import Container from 'components/common/Grid/Container'
 import css from 'components/Catalog/Catalog.module.scss'
 import classNames from 'classnames'
 import { Link } from 'react-router-dom'

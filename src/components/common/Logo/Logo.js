@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import css from './Logo.module.scss'
+import css from 'components/common/Logo/Logo.module.scss'
 import { Link } from 'react-router-dom'
 import classnames from 'classnames'
 

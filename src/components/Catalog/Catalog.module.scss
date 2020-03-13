@@ -83,20 +83,20 @@
   border: 1px solid $colorLightest;
 }
 
+@media (max-width: 1279px) {
+  .card {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 767px) {
   .list {
-    display: block;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    grid-gap: 1rem;
   }
 
   .item {
-    height: 15rem;
-
-    &:not(:first-of-type) {
-      margin-top: 1rem;
-    }
-  }
-
-  .card {
-    opacity: 1;
+    grid-column: auto;
+    grid-row: auto;
   }
 }

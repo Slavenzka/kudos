@@ -1,0 +1,60 @@
+@import "styles/mixins";
+@import "styles/variables";
+
+.list {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item:not(.itemPassive) {
+  position: relative;
+  margin-right: 2rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 0.5rem / 2);
+    right: -1.25rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: $colorHighlightRed;
+    border-radius: 50%;
+  }
+
+  .link {
+    color: $colorLightest;
+    transition-duration: 0.3s;
+
+    &:hover {
+      color: $colorHighlightRed;
+    }
+  }
+}
+
+.itemPassive {
+  pointer-events: none;
+
+  .link {
+    color: $colorDarker;
+  }
+}
+
+.link {
+  @include fontBreadcrumbs;
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    margin-top: 2rem;
+    width: calc(100% + 1rem);
+    overflow: scroll;
+    white-space: nowrap;
+  }
+
+  .item:last-of-type {
+    padding-right: 1rem;
+  }
+}

@@ -99,7 +99,7 @@ class Home extends Component {
             name: 'Название предприятия'
           },
           {
-            img: 'assets/images/logo-enelt.png',
+            img: 'assets/images/logo-transformer.png',
             name: 'Название предприятия',
             modal: {
               img: 'assets/images/certificate example2.jpg',
@@ -107,7 +107,7 @@ class Home extends Component {
             }
           },
           {
-            img: 'assets/images/logo-uemz.png',
+            img: 'assets/images/logo-elektrofizika.png',
             name: 'Название предприятия'
           },
         ]
